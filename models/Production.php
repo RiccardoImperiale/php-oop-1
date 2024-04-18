@@ -7,7 +7,7 @@ class Production
     public $rating;
     public $genre;
 
-    public function __construct($title, $language, $rating, Genre $genre)
+    public function __construct(string $title, string $language, int $rating, Genre $genre)
     {
         $this->title = $title;
         $this->language = $language;
