@@ -5,8 +5,9 @@ class Production
     public $title;
     public $language;
     public $rating;
+    public $genre;
 
-    public function __construct($title, $language, $rating)
+    public function __construct($title, $language, $rating, Genre $genre)
     {
         $this->title = $title;
         $this->language = $language;
@@ -15,5 +16,6 @@ class Production
         } else {
             throw new InvalidArgumentException("Rating must be between 1 and 10");
         }
+        $this->genre = $genre;
     }
 }
