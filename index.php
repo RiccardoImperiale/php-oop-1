@@ -21,4 +21,7 @@ class Production
 $production1 = new Production('Matrix', 'English', 9);
 $production2 = new Production('Parasite', 'Korean', 10);
 
-var_dump($production1, $production2);
+// var_dump($production1, $production2);
+echo "Title: $production1->title, Language: $production1->language, Rating: $production1->rating";
+echo '<br>';
+echo "Title: $production2->title, Language: $production2->language, Rating: $production2->rating";
