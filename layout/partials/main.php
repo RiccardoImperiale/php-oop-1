@@ -7,14 +7,19 @@
                 <div class="col">
                     <div class="card bg-dark h-100" data-bs-theme="dark">
                         <div class="card-header  d-flex">
-                            <span class="text-warning"><?= $production->title ?></span>
+                            <span class="text-warning-emphasis"><?= $production->title ?></span>
                             <span class="rating ms-auto"><?= $production->rating ?><span class="text-secondary">/10</span></span>
                         </div>
                         <div class="card-body">
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Language: </span><?= $production->language ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Genre: </span><?= $production->genre->name ?></h6>
+                            <h6><span class="text-body-tertiary fs-sm">Language: </span><?= $production->language ?></h6>
+                            <h6>
+                                <span class="text-body-tertiary fs-sm">Genre: </span>
+                                <?php foreach ($production->genre as $genre) : ?>
+                                    <span class="genre"><?= $genre->name ?></span>
+                                <?php endforeach; ?>
+                            </h6>
                             <hr>
-                            <p style="font-size: 0.85rem;" class="card-text text-secondary"><?= $production->genre->description ?></p>
+                            <p class="card-text text-secondary fs-sm"><?= $production->genre[0]->description ?></p>
                         </div>
                     </div>
                 </div>
@@ -31,12 +36,17 @@
                             <span class="rating ms-auto"><?= $movie->rating ?><span class="text-secondary">/10</span></span>
                         </div>
                         <div class="card-body">
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Language: </span><?= $movie->language ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Genre: </span><?= $movie->genre->name ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Profits: </span><?= $movie->getProfit() ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Duration: </span><?= $movie->getDuration() ?></h6>
+                            <h6><span class="text-body-tertiary fs-sm">Language: </span><?= $movie->language ?></h6>
+                            <h6>
+                                <span class="text-body-tertiary fs-sm">Genre: </span>
+                                <?php foreach ($movie->genre as $genre) : ?>
+                                    <span class="genre"><?= $genre->name ?></span>
+                                <?php endforeach; ?>
+                            </h6>
+                            <h6><span class="text-body-tertiary fs-sm">Profits: </span><?= $movie->getProfit() ?></h6>
+                            <h6><span class="text-body-tertiary fs-sm">Duration: </span><?= $movie->getDuration() ?></h6>
                             <hr>
-                            <p style="font-size: 0.85rem;" class="card-text text-secondary"><?= $movie->genre->description ?></p>
+                            <p class="card-text text-secondary fs-sm"><?= $movie->genre[0]->description ?></p>
                         </div>
                     </div>
                 </div>
@@ -53,11 +63,16 @@
                             <span class="rating ms-auto"><?= $series->rating ?><span class="text-secondary">/10</span></span>
                         </div>
                         <div class="card-body">
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Language: </span><?= $series->language ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Genre: </span><?= $series->genre->name ?></h6>
-                            <h6><span style="font-size: 0.85rem;" class="text-body-tertiary">Seasons: </span><?= $series->seasons ?></h6>
+                            <h6><span class="fs-sm text-body-tertiary">Language: </span><?= $series->language ?></h6>
+                            <h6>
+                                <span class="text-body-tertiary fs-sm">Genre: </span>
+                                <?php foreach ($series->genre as $genre) : ?>
+                                    <span class="genre"><?= $genre->name ?></span>
+                                <?php endforeach; ?>
+                            </h6>
+                            <h6><span class="fs-sm text-body-tertiary">Seasons: </span><?= $series->seasons ?></h6>
                             <hr>
-                            <p style="font-size: 0.85rem;" class="card-text text-secondary"><?= $series->genre->description ?></p>
+                            <p class="fs-sm card-text text-secondary"><?= $series->genre[0]->description ?></p>
                         </div>
                     </div>
                 </div>

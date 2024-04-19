@@ -2,7 +2,7 @@
 
 class Movie extends Production
 {
-    public function __construct(string $title, string $language, float $rating, Genre $genre, public string $profits, public float $duration)
+    public function __construct(string $title, string $language, float $rating, array $genre, public string $profits, public float $duration)
     {
         parent::__construct($title, $language, $rating, $genre);
     }
